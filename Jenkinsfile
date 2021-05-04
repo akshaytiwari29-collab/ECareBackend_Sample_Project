@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         ecrListImages()
       }
@@ -9,8 +9,8 @@ pipeline {
 
   }
   environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
-        AWS_ECS_CLUSTER = 'ch-dev'
+    AWS_ACCESS_KEY_ID = credentials('aws-key-id')
+    AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
+    AWS_ECS_CLUSTER = 'ch-dev'
   }
 }
